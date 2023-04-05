@@ -181,7 +181,7 @@ function VideoFooter() {
   return (
     <div className="video__footer">
       <div className="videoFooter__text">
-        <h3>@maatheus</h3>
+        <h3>@Pedro</h3>
         <p>Descrição do video</p>
         <div className="videoFooter__music">
           <MusicNoteIcon className="videoFooter__icon" />
