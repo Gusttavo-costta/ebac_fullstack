@@ -1,7 +1,9 @@
 import React, { useRef, useState } from "react";
+import VideoFooter from "./componentes/Footer/VideoFooter";
+import VideoSidebar from "./componentes/sidebar/VideoSidebar";
 import "./video.css";
 
-function Video() {
+function Video({likes,messages,shares,name,description,music,url}) {
   const videoref = useRef(null);
   const [play, setPlay] = useState(false);
 
@@ -18,13 +20,22 @@ function Video() {
   return (
     <div className="video">
       <video
-        className="video_player"
+        className="video__player"
         ref={videoref}
         onClick={handdleStart}
         loop
-        src="https://firebasestorage.googleapis.com/v0/b/jornada2-eb156.appspot.com/o/brecker2.mp4?alt=media&token=b7e3ebf7-89a0-47a0-8a34-66f1176a71e3
-            "
+        src={url}           
       ></video>
+        <VideoSidebar
+           likes={likes}
+           messages={messages}
+           shares={shares}
+        />
+        <VideoFooter 
+        name={name}
+        description={description}
+        music={music}
+        />
     </div>
   );
 }
